@@ -1,50 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Home, ChevronDown, MessageSquare } from 'lucide-react';
 
 const Header: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
-    <header className='sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-secondary/20'>
-      <div className='w-full px-4 sm:px-10 lg:px-16'>
+    <header className='sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/5'>
+      <div className='max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20'>
+        {/* PRIMEIRA LINHA */}
         <div className='flex justify-between items-center h-20'>
-          {/* Logo Area */}
-          <div className='flex items-center gap-3'>
+          <Link to='/' className='flex items-center'>
             <img
               src='/Logomarca.svg'
-              alt='Logotipo Precettore'
-              className='h-16 w-auto object-contain' // Ajustei levemente a altura para 16 (64px)
+              alt='Precettore'
+              className='h-14 w-auto'
             />
-          </div>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <nav className='hidden md:flex space-x-12'>
-            {' '}
-            {/* Aumentei o espaço entre os links (space-x-12) */}
-            <a
-              href='#home'
-              className='text-sm font-medium text-brand-light hover:text-brand-primary transition-colors'
-            >
-              Início
-            </a>
-            <a
-              href='#sobre'
-              className='text-sm font-medium text-brand-light hover:text-brand-primary transition-colors'
-            >
-              Metodologia
-            </a>
-            <a
-              href='#cursos'
-              className='text-sm font-medium text-brand-light hover:text-brand-primary transition-colors'
-            >
-              Cursos
-            </a>
-          </nav>
-
-          {/* Call to Action */}
-          <div className='flex items-center'>
-            <button className='bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-8 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-brand-primary/20'>
-              Área do Aluno
-            </button>
-          </div>
+          <button className='group flex items-center gap-3 border-2 border-white hover:bg-white text-white hover:text-brand-dark px-8 py-2 rounded-md font-black text-sm uppercase tracking-widest transition-all'>
+            <MessageSquare size={18} />
+            Contato
+          </button>
         </div>
+
+        <div className='w-full h-px bg-white/10'></div>
+
+        {/* SEGUNDA LINHA */}
+        <nav className='hidden md:flex justify-start items-center h-14 gap-12'>
+          <Link
+            to='/'
+            className='flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'
+          >
+            <Home size={18} className='text-brand-primary' /> Início
+          </Link>
+
+          {/* DROPDOWN DE TRILHAS */}
+          <div
+            className='relative h-full flex items-center'
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+          >
+            <button className='flex items-center gap-1 text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'>
+              Trilhas <ChevronDown size={16} />
+            </button>
+
+            {/* Menu Dropdown */}
+            <div
+              className={`absolute top-full left-0 w-64 pt-2 transition-all duration-300 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+            >
+              <div className='bg-brand-dark border border-white/10 rounded-xl p-2 shadow-2xl'>
+                <Link
+                  to='/trilha-dominio-inep'
+                  className='block px-4 py-3 text-xs font-bold uppercase tracking-tighter text-white hover:bg-brand-primary hover:text-brand-dark rounded-lg transition-colors'
+                >
+                  Domínio INEP – 1ª Fase
+                </Link>
+                <div className='px-4 py-3 text-[10px] font-bold text-brand-light/20 uppercase tracking-widest italic'>
+                  Em breve: 2ª Fase Prática
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href='#metodologia'
+            className='text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'
+          >
+            Metodologia
+          </a>
+        </nav>
       </div>
     </header>
   );

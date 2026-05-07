@@ -1,24 +1,33 @@
-# Logs
+# --- ESSENCIAIS (Não apague estes!) ---
+node_modules
+dist
+dist-ssr
+*.local
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# --- VARIÁVEIS DE AMBIENTE (Segurança) ---
+.env
+.env.local
+.env.*.local
+!.env.example
 
-# Editor directories and files
+# --- TYPESCRIPT & LINTERS ---
+*.tsbuildinfo
+.eslintcache
+.prettiercache
+
+# --- SISTEMA E EDITORES ---
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+Thumbs.db
 *.sw?
+*.suo
+
+# --- VITE ---
+.vite

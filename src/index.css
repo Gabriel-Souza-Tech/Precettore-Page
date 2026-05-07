@@ -28,7 +28,7 @@
 }
 
 #root {
-  @apply min-h-svh flex flex-col mx-auto w-full max-w-[1200px] px-4 md:px-8;
+  @apply min-h-svh flex flex-col w-full;
 }
 
 .btn-primary {
