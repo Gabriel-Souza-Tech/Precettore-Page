@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Cores da Precettore */
+  --color-brand-dark: #0D1E2B;
+  --color-brand-primary: #16B792;
+  --color-brand-secondary: #40758C;
+  --color-brand-light: #F8FAFC;
+
+  /* Tipografia */
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+
+  /* Variáveis de espaçamento e transição */
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-light font-sans antialiased;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-bold text-white tracking-tight;
+  }
+}
+
+#root {
+  @apply min-h-svh flex flex-col mx-auto w-full max-w-[1200px] px-4 md:px-8;
+}
+
+.btn-primary {
+  @apply bg-brand-primary hover:brightness-110 text-brand-dark px-6 py-3 rounded-lg font-bold transition-all duration-200;
+}
