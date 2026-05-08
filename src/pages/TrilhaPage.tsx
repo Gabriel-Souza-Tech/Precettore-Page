@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CourseCurriculum from '../components/CourseCurriculum'; // Reutilizaremos o componente detalhado
-import { Award, BookOpen, CheckCircle } from 'lucide-react';
+import CourseCurriculum from '../components/CourseCurriculum';
+import PricingPlans from '../components/PricingPlans';
+import { Award, BookOpen, CheckCircle, ArrowRight } from 'lucide-react';
 
 const TrilhaPage: React.FC = () => {
   useEffect(() => {
@@ -36,10 +37,10 @@ const TrilhaPage: React.FC = () => {
           </div>
         </section>
 
-        {/* COMPONENTE DE CURRÍCULO (Aquele que detalhamos com Módulos e Especialidades) */}
+        {/* COMPONENTE DE CURRÍCULO */}
         <CourseCurriculum />
 
-        {/* SEÇÃO DE ENTREGA (O QUE O ALUNO RECEBE) */}
+        {/* SEÇÃO DE ENTREGA */}
         <section className='py-24 border-t border-white/5'>
           <div className='max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20'>
             <div className='grid md:grid-cols-3 gap-12'>
@@ -82,6 +83,11 @@ const TrilhaPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* FECHAMENTO DE CONVERSÃO */}
+        <div id='planos'>
+          <PricingPlans />
+        </div>
       </main>
 
       <Footer />

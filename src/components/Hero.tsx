@@ -1,16 +1,19 @@
 import React from 'react';
+import autoridadeRecorte from '../assets/autoridadeRecorte.webp';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className='relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden'>
+    <section className='relative pt-8 pb-20 lg:pt-16 lg:pb-32 overflow-hidden'>
       <div className='max-w-360 mx-auto px-4 md:px-10 lg:px-18'>
-        <div className='flex flex-col lg:flex-row items-center gap-12'>
+        <div className='flex flex-col lg:flex-row items-center lg:items-start gap-12'>
           {/* Lado Esquerdo: Textos e CTA */}
-          <div className='flex-1 text-center lg:text-left z-10'>
-            <span className='inline-block py-1 px-3 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-wider mb-6'>
+          <div className='flex-1 text-center lg:text-left z-10 pt-20'>
+            <span className='inline-block py-2 px-4 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-bold uppercase tracking-[0.2em] mb-10 border border-brand-primary/20'>
               Método Comprovado
             </span>
-            <h1 className='text-4xl md:text-6xl font-black text-white leading-tight mb-6'>
+            <h1 className='text-4xl md:text-6xl font-black text-white leading-tight  mb-6'>
               Domine a Medicina com a{' '}
               <span className='text-brand-primary'>Estratégia Certa</span>
             </h1>
@@ -20,39 +23,41 @@ const Hero: React.FC = () => {
               aprovação.
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4'>
-              <button className='w-full sm:w-auto bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-8 py-4 rounded-xl font-extrabold text-lg transition-all shadow-lg shadow-brand-primary/20'>
-                Quero ser aprovado
-              </button>
-              <button className='w-full sm:w-auto border border-brand-secondary/30 hover:bg-white/5 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all'>
-                Conhecer o método
-              </button>
+              <Link to='trilha-dominio-inep'>
+                <button className='group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-brand-primary/20 transform hover:-translate-y-1'>
+                  Conhecer o método
+                  <ArrowRight
+                    size={24}
+                    className='group-hover:translate-x-2 transition-transform'
+                  />
+                </button>
+              </Link>
             </div>
           </div>
 
-          {/* Lado Direito: Visual / Vídeo Mockup */}
-          <div className='flex-1 relative w-full max-w-xl lg:max-w-none'>
-            <div className='relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl'>
-              {/* Espaço para o vídeo ou imagem principal */}
-              <div className='aspect-video bg-slate-800 flex items-center justify-center group cursor-pointer'>
-                <div className='w-20 h-20 bg-brand-primary rounded-full flex items-center justify-center pl-1 transition-transform group-hover:scale-110'>
-                  <svg
-                    className='w-8 h-8 text-brand-dark'
-                    fill='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path d='M8 5v14l11-7z' />
-                  </svg>
-                </div>
-                <img
-                  src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80'
-                  alt='Estudante de medicina'
-                  className='absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay'
-                />
+          {/* Lado Direito: Foto do Especialista com Glow */}
+          <div className='flex-1 relative flex justify-center items-end'>
+            <div className='absolute w-[100%] h-[80%] bg-brand-primary/20 rounded-full blur-[40px] animate-pulse bottom-10'></div>
+
+            <div className='relative z-10 w-full max-w-lg lg:max-w-xl'>
+              <img
+                src={autoridadeRecorte}
+                alt='Mentor Precettore'
+                className='w-full h-auto drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)] transform hover:scale-[1.02] transition-transform duration-500
+                [mask-image:radial-gradient(ellipse_at_center,_black_50%,_transparent_100%)]
+                [-webkit-mask-image:radial-gradient(ellipse_at_center,_black_50%,_transparent_85%)]'
+              />
+
+              {/* Badge Flutuante de Autoridade */}
+              <div className='absolute bottom-32 -left-12 bg-brand-dark/90 backdrop-blur-md border border-white/10 p-5 rounded-2xl hidden xl:block shadow-2xl'>
+                <p className='text-brand-primary font-black text-sm uppercase tracking-widest'>
+                  Dr. Responsável
+                </p>
+                <p className='text-white/50 text-[10px] uppercase font-bold tracking-tighter'>
+                  Especialista em Aprovação Revalida
+                </p>
               </div>
             </div>
-
-            {/* Detalhe decorativo (Blur de fundo) */}
-            <div className='absolute -top-20 -right-20 w-64 h-64 bg-brand-primary/20 rounded-full blur-[120px] -z-10'></div>
           </div>
         </div>
       </div>

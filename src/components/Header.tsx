@@ -62,13 +62,6 @@ const Header: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <a
-            href='#metodologia'
-            className='text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'
-          >
-            Metodologia
-          </a>
         </nav>
       </div>
     </header>
