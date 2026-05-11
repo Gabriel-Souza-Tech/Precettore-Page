@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CourseCurriculum from '../components/CourseCurriculum';
 import PricingPlans from '../components/PricingPlans';
-import { Award, BookOpen, CheckCircle, ArrowRight } from 'lucide-react';
+import { Award, BookOpen, CheckCircle } from 'lucide-react';
+import TrustInfo from '../components/TrustInfo';
 
 const TrilhaPage: React.FC = () => {
   useEffect(() => {
@@ -88,6 +89,9 @@ const TrilhaPage: React.FC = () => {
         <div id='planos'>
           <PricingPlans />
         </div>
+
+        {/* SEÇÃO FALE CONOSCO */}
+        <TrustInfo />
       </main>
 
       <Footer />

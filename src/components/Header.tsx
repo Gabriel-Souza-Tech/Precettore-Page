@@ -62,6 +62,13 @@ const Header: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <Link
+            to='/contato'
+            className='flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'
+          >
+            Contato
+          </Link>
         </nav>
       </div>
     </header>
