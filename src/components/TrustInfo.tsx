@@ -12,9 +12,13 @@ const TrustInfo: React.FC = () => {
           </p>
 
           {/* Redes Sociais */}
+
           <div className='flex items-center gap-4'>
+            {/* Instagram */}
             <a
-              href='#'
+              href='https://www.instagram.com/precettore.aprova/'
+              target='_blank'
+              rel='noopener noreferrer'
               className='p-2 rounded-full border border-white/10 text-white/60 hover:bg-brand-primary hover:text-brand-dark transition-all'
             >
               <svg
@@ -31,6 +35,7 @@ const TrustInfo: React.FC = () => {
                 <line x1='17.5' x2='17.51' y1='6.5' y2='6.5' />
               </svg>
             </a>
+            {/* Linkedin */}
             <a
               href='#'
               className='p-2 rounded-full border border-white/10 text-white/60 hover:bg-brand-primary hover:text-brand-dark transition-all'

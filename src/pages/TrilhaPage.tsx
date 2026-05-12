@@ -15,9 +15,9 @@ const TrilhaPage: React.FC = () => {
     <div className='min-h-screen bg-brand-dark flex flex-col'>
       <Header />
 
-      <main className='grow pt-10'>
+      <main className='grow'>
         {/* HERO DA PÁGINA INTERNA */}
-        <section className='py-20 bg-linear-to-b from-brand-primary/5 to-transparent'>
+        <section className='pt-12 md:pt-16 bg-linear-to-b from-brand-primary/5 to-transparent'>
           <div className='max-w-360 mx-auto px-6 md:px-12 lg:px-20'>
             <div className='max-w-4xl'>
               <span className='text-brand-primary font-black uppercase tracking-[0.3em] text-sm'>
@@ -42,8 +42,8 @@ const TrilhaPage: React.FC = () => {
         <CourseCurriculum />
 
         {/* SEÇÃO DE ENTREGA */}
-        <section className='py-24 border-t border-white/5'>
-          <div className='max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20'>
+        <section className='pt-24 border-white/5'>
+          <div className='max-w-360 mx-auto px-6 md:px-12 lg:px-20'>
             <div className='grid md:grid-cols-3 gap-12'>
               <div className='flex flex-col gap-4'>
                 <div className='w-12 h-12 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary'>

@@ -48,7 +48,7 @@ const PricingPlans: React.FC = () => {
               }`}
             >
               {/* O Card Interno */}
-              <div className='bg-[#0A1622] p-10 md:p-12 h-full flex flex-col relative overflow-hidden'>
+              <div className='bg-[#0A1622] p-8 md:p-12 h-full flex flex-col relative overflow-hidden'>
                 {/* Ícone de fundo (Marca d'água médica) */}
                 <ShieldCheck className='absolute -right-10 -bottom-10 w-64 h-64 text-white/5 -rotate-12 pointer-events-none' />
 

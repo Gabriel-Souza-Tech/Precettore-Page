@@ -61,13 +61,6 @@ const ContactPage: React.FC = () => {
                     contato@precettore.com.br
                   </a>
                 </div>
-
-                <a
-                  href='#'
-                  className='inline-block mt-4 text-white/40 hover:text-white text-xs underline uppercase tracking-widest'
-                >
-                  Dúvidas sobre treinamentos?
-                </a>
               </div>
             </div>
 

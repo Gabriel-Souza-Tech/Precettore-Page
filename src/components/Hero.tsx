@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className='max-w-360 mx-auto px-4 md:px-10 lg:px-18'>
         <div className='flex flex-col lg:flex-row items-center lg:items-start gap-12'>
           {/* Lado Esquerdo: Textos e CTA */}
-          <div className='flex-1 text-center lg:text-left z-10 pt-20'>
+          <div className='flex-1 text-center lg:text-left z-10 '>
             <span className='inline-block py-2 px-4 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-bold uppercase tracking-[0.2em] mb-10 border border-brand-primary/20'>
               Método Comprovado
             </span>
@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4'>
               <Link to='trilha-dominio-inep'>
-                <button className='group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-brand-primary/20 transform hover:-translate-y-1'>
+                <button className='group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-6 py-4 md:px-10 md:py-6 rounded-2xl font-black text-xl md:text-2xl transition-all shadow-2xl shadow-brand-primary/20 transform hover:-translate-y-1'>
                   Conhecer o método
                   <ArrowRight
                     size={24}

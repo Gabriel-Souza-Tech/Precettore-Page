@@ -47,7 +47,7 @@ const CourseCurriculum: React.FC = () => {
   ];
 
   return (
-    <section className='py-24 bg-brand-dark'>
+    <section className='pt-12 md:pt-16  bg-brand-dark'>
       <div className='max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20'>
         {/* MÓDULO 1: FUNDAMENTOS E ALGORITMO */}
         <div className='mb-32'>
@@ -129,7 +129,7 @@ const CourseCurriculum: React.FC = () => {
         {/* MÓDULO 2: ESPECIALIDADES */}
         <div>
           <div className='text-center lg:text-left mb-16'>
-            <h2 className='text-brand-primary font-black uppercase tracking-[0.3em] text-sm mb-4'>
+            <h2 className='text-brand-primary font-black uppercase tracking-[0.3em] text-sm mb-8'>
               Módulo 2 – Trilhas por Especialidade
             </h2>
             <h3 className='text-4xl md:text-5xl font-black text-white tracking-tighter uppercase'>
