@@ -3,8 +3,29 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TrustInfo from '../components/TrustInfo'; // O componente que acabamos de criar
 import { MessageCircle, Mail, Send } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+
+type ContactFormData = {
+  name: string;
+  phone: string;
+  mail: string;
+  message: string;
+};
 
 const ContactPage: React.FC = () => {
+  // Variaveis do React Hook Form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>();
+
+  const onSubmit = async (data: ContactFormData) => {
+    console.log('Enviando dados...', data);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    alert('Mensagem enviada com sucesso!');
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -71,43 +92,93 @@ const ContactPage: React.FC = () => {
                   Nos envie uma mensagem
                 </h2>
 
-                <form className='grid md:grid-cols-2 gap-6'>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className='grid md:grid-cols-2 gap-6'
+                >
                   <div className='flex flex-col gap-2'>
                     <input
+                      {...register('name', {
+                        required: 'O nome e obrigatorio',
+                      })}
                       type='text'
                       placeholder='Seu nome completo'
-                      className='bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all font-medium'
+                      className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.name ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
                     />
+                    {errors.name && (
+                      <span className='text-red-500 text-xs mt-1'>
+                        {errors.name.message}
+                      </span>
+                    )}
                   </div>
                   <div className='flex flex-col gap-2'>
                     <input
+                      {...register('phone', {
+                        required: 'O numero e obrigatorio',
+                        pattern: {
+                          value: /^[0-9]+$/,
+                          message: 'Por favor, insira apenas números',
+                        },
+                      })}
                       type='text'
                       placeholder='Telefone com DDD'
-                      className='bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all font-medium'
+                      className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.phone ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
                     />
+                    {errors.phone && (
+                      <span className='text-red-500 text-xs mt-1'>
+                        {errors.phone.message}
+                      </span>
+                    )}
                   </div>
                   <div className='md:col-span-2 flex flex-col gap-2'>
                     <input
+                      {...register('mail', {
+                        required: 'O email e obrigatorio',
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                          message: 'Digite um e-mail válido',
+                        },
+                      })}
                       type='email'
                       placeholder='Seu melhor e-mail'
-                      className='bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all font-medium'
+                      className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.mail ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
                     />
+                    {errors.mail && (
+                      <span className='text-red-500 text-xs mt-1'>
+                        {errors.mail.message}
+                      </span>
+                    )}
                   </div>
                   <div className='md:col-span-2 flex flex-col gap-2'>
                     <textarea
+                      {...register('message', {
+                        required: 'A menssagem e obrigatoria',
+                      })}
                       rows={4}
                       placeholder='Escreva sua mensagem...'
-                      className='bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all font-medium resize-none'
+                      className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium resize-none ${errors.message ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
                     />
+                    {errors.message && (
+                      <span className='text-red-500 text-xs mt-1'>
+                        {errors.message.message}
+                      </span>
+                    )}
                   </div>
 
                   <div className='md:col-span-2'>
-                    <button className='group flex items-center justify-center gap-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-black px-10 py-4 rounded-full transition-all uppercase tracking-widest shadow-xl shadow-orange-900/20'>
-                      Enviar mensagem
-                      <Send
-                        size={18}
-                        className='group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'
-                      />
+                    <button
+                      type='submit'
+                      disabled={isSubmitting}
+                      className='disabled:opacity-50 disabled:cursor-not-allowed group flex items-center justify-center gap-3 bg-linear-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-black px-10 py-4 rounded-full transition-all uppercase tracking-widest shadow-xl shadow-orange-900/20'
+                    >
+                      {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+                      {!isSubmitting && (
+                        <Send
+                          size={18}
+                          className='group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'
+                        />
+                      )}
                     </button>
                   </div>
                 </form>
