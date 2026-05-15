@@ -15,7 +15,9 @@ const Hero: React.FC = () => {
             </span>
             <h1 className='text-4xl md:text-6xl font-black text-white leading-tight  mb-6'>
               Domine a Medicina com a{' '}
-              <span className='text-brand-primary'>Estratégia Certa</span>
+              <span className='text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-brand-secondary'>
+                Estratégia Certa
+              </span>
             </h1>
             <p className='text-lg md:text-xl text-brand-light/80 mb-10 max-w-2xl mx-auto lg:mx-0'>
               A Precettore Aprova oferece o suporte necessário para transformar

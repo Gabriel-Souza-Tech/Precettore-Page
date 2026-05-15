@@ -31,8 +31,9 @@ const TrilhaPage: React.FC = () => {
               </h1>
               <p className='text-xl text-brand-light/70 leading-relaxed'>
                 A estratégia definitiva para quem não quer apenas estudar, mas
-                ser aprovado. Um método focado em como a banca pensa e como o
-                seu raciocínio clínico deve ser moldado.
+                mas dominar a prática clínica. Um método focado em te ensionar a
+                resolver os problemas do dia a dia com segurança e precisão,
+                mostrando como o seu raciocínio clínico deverá ser moldado.
               </p>
             </div>
           </div>
@@ -65,8 +66,8 @@ const TrilhaPage: React.FC = () => {
                   Treinamento de Elite
                 </h4>
                 <p className='text-brand-light/60'>
-                  Questões comentadas padrão INEP e Simulados que replicam a
-                  pressão do dia da prova.
+                  Simulação de casos clínicos que replicam a pressão do dia a
+                  dia.
                 </p>
               </div>
               <div className='flex flex-col gap-4'>
