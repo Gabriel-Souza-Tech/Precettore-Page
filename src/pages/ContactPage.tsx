@@ -1,29 +1,46 @@
 import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  contactFormSchema,
+  ContactFormSchema,
+} from '../schemas/contactFormSchema';
+import { phoneMask } from '../utils/masks';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import TrustInfo from '../components/TrustInfo'; // O componente que acabamos de criar
+import TrustInfo from '../components/TrustInfo';
 import { MessageCircle, Mail, Send } from 'lucide-react';
-import { useForm } from 'react-hook-form';
-
-type ContactFormData = {
-  name: string;
-  phone: string;
-  mail: string;
-  message: string;
-};
 
 const ContactPage: React.FC = () => {
-  // Variaveis do React Hook Form
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormData>();
+    reset,
+  } = useForm<ContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      mail: '',
+      message: '',
+    },
+  });
 
-  const onSubmit = async (data: ContactFormData) => {
-    console.log('Enviando dados...', data);
+  const onSubmit = async (data: ContactFormSchema) => {
+    console.log('Dados validados e prontos para o Node:', data);
+
+    // temporario para quando tiver o envio para API
     await new Promise((resolve) => setTimeout(resolve, 2000));
+
     alert('Mensagem enviada com sucesso!');
+    reset();
+  };
+
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setValue('phone', phoneMask(value), { shouldValidate: true });
   };
 
   useEffect(() => {
@@ -50,7 +67,7 @@ const ContactPage: React.FC = () => {
           <div className='grid lg:grid-cols-12 gap-8 items-start'>
             {/* Coluna Esquerda: Contatos Diretos (4 colunas) */}
             <div className='lg:col-span-4 space-y-6'>
-              <div className='bg-white/[0.03] border border-white/5 p-8 rounded-3xl'>
+              <div className='bg-white/3 border border-white/5 p-8 rounded-3xl'>
                 <h2 className='text-xl font-bold text-white mb-8 uppercase tracking-widest'>
                   Contatos
                 </h2>
@@ -87,7 +104,7 @@ const ContactPage: React.FC = () => {
 
             {/* Coluna Direita: Formulário (8 colunas) */}
             <div className='lg:col-span-8'>
-              <div className='bg-white/[0.03] border border-white/5 p-8 md:p-10 rounded-3xl'>
+              <div className='bg-white/3 border border-white/5 p-8 md:p-10 rounded-3xl'>
                 <h2 className='text-xl font-bold text-white mb-8 uppercase tracking-widest'>
                   Nos envie uma mensagem
                 </h2>
@@ -96,11 +113,10 @@ const ContactPage: React.FC = () => {
                   onSubmit={handleSubmit(onSubmit)}
                   className='grid md:grid-cols-2 gap-6'
                 >
+                  {/* Campo Nome */}
                   <div className='flex flex-col gap-2'>
                     <input
-                      {...register('name', {
-                        required: 'O nome e obrigatorio',
-                      })}
+                      {...register('name')}
                       type='text'
                       placeholder='Seu nome completo'
                       className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.name ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
@@ -111,15 +127,12 @@ const ContactPage: React.FC = () => {
                       </span>
                     )}
                   </div>
+
+                  {/* Campo Telefone com Máscara Integrada */}
                   <div className='flex flex-col gap-2'>
                     <input
-                      {...register('phone', {
-                        required: 'O numero e obrigatorio',
-                        pattern: {
-                          value: /^[0-9]+$/,
-                          message: 'Por favor, insira apenas números',
-                        },
-                      })}
+                      {...register('phone')}
+                      onChange={handlePhoneChange}
                       type='text'
                       placeholder='Telefone com DDD'
                       className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.phone ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
@@ -130,16 +143,11 @@ const ContactPage: React.FC = () => {
                       </span>
                     )}
                   </div>
+
+                  {/* Campo E-mail */}
                   <div className='md:col-span-2 flex flex-col gap-2'>
                     <input
-                      {...register('mail', {
-                        required: 'O email e obrigatorio',
-                        pattern: {
-                          value:
-                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                          message: 'Digite um e-mail válido',
-                        },
-                      })}
+                      {...register('mail')}
                       type='email'
                       placeholder='Seu melhor e-mail'
                       className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium ${errors.mail ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
@@ -150,11 +158,11 @@ const ContactPage: React.FC = () => {
                       </span>
                     )}
                   </div>
+
+                  {/* Campo Mensagem */}
                   <div className='md:col-span-2 flex flex-col gap-2'>
                     <textarea
-                      {...register('message', {
-                        required: 'A menssagem e obrigatoria',
-                      })}
+                      {...register('message')}
                       rows={4}
                       placeholder='Escreva sua mensagem...'
                       className={`bg-white text-brand-dark px-6 py-4 rounded-xl focus:outline-none focus:ring-2 transition-all font-medium resize-none ${errors.message ? 'ring-2 ring-red-500' : 'focus:ring-brand-primary'}`}
@@ -166,6 +174,7 @@ const ContactPage: React.FC = () => {
                     )}
                   </div>
 
+                  {/* Botão de Envio */}
                   <div className='md:col-span-2'>
                     <button
                       type='submit'
