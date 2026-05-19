@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CourseCurriculum from '../components/CourseCurriculum';
 import PricingPlans from '../components/PricingPlans';
 import TrustInfo from '../components/TrustInfo';
 import {
@@ -17,7 +16,6 @@ const MentoriaPosEdital: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Dentro do seu MentoriaPosEdital.tsx, antes do return:
   const preEditalPlans = [
     {
       name: 'Mentoria Premium',
@@ -52,7 +50,7 @@ const MentoriaPosEdital: React.FC = () => {
                 Construção de Base Sólida
               </span>
               <h1 className='text-5xl md:text-7xl font-black text-white tracking-tighter mt-4 mb-8 uppercase'>
-                Mentoria Pós-Edital <br />
+                Mentoria Pre-Edital <br />
                 <span className='text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-cyan-400'>
                   Revalida INEP
                 </span>

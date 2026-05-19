@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CourseCurriculum from '../components/CourseCurriculum';
 import PricingPlans from '../components/PricingPlans';
 import TrustInfo from '../components/TrustInfo';
 import {
@@ -128,10 +127,6 @@ const MentoriaPosEdital: React.FC = () => {
         </section>
 
         {/* FECHAMENTO DE CONVERSÃO */}
-        {/* Dica de Mentor: Dentro de PricingPlans, configure o array de dados para receber:
-            - Parcelas: 12x de R$ 247,87
-            - Preço cheio de R$ 4.249,25 por R$ 2.974,47
-            - Mensagem de desconto: 30% OFF e 10% adicionais via PIX/Boleto */}
         <PricingPlans plans={posEditalPlans} />
 
         {/* SEÇÃO FALE CONOSCO (TRUST INFO) */}
