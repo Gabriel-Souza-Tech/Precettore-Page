@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               aprovação.
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4'>
-              <Link to='trilha-dominio-inep'>
+              <Link to='mentoria'>
                 <button className='group relative w-full sm:w-auto flex items-center justify-center gap-4 bg-brand-primary hover:bg-brand-primary/90 text-brand-dark px-6 py-4 md:px-10 md:py-6 rounded-2xl font-black text-xl md:text-2xl transition-all shadow-2xl shadow-brand-primary/20 transform hover:-translate-y-1'>
                   Conhecer o método
                   <ArrowRight
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
 
           {/* Lado Direito: Foto do Especialista com Glow */}
           <div className='flex-1 relative flex justify-center items-end'>
-            <div className='absolute w-[100%] h-[80%] bg-brand-primary/20 rounded-full blur-[40px] animate-pulse bottom-10'></div>
+            <div className='absolute w-full h-[80%] bg-brand-primary/20 rounded-full blur-2xl animate-pulse bottom-10'></div>
 
             <div className='relative z-10 w-full max-w-lg lg:max-w-xl'>
               <img

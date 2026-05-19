@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
   return (
     <header className='sticky top-0 z-50 bg-brand-dark/80 backdrop-blur-md'>
-      <div className='max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20'>
+      <div className='max-w-360 mx-auto px-6 md:px-12 lg:px-20'>
         {/* PRIMEIRA LINHA (Topo visível em todas as telas) */}
         <div className='flex justify-between items-center h-20'>
           <Link to='/' className='flex items-center' onClick={closeMobileMenu}>
@@ -45,7 +45,6 @@ const Header: React.FC = () => {
 
         {/* SEGUNDA LINHA */}
         <nav className='hidden md:flex justify-start items-center h-14 gap-12'>
-          {/* ... Seu código original do nav desktop (Link Inicio, Dropdown Trilha, Link Contato) ... */}
           <Link
             to='/'
             className='flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'
@@ -60,21 +59,24 @@ const Header: React.FC = () => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button className='flex items-center gap-1 text-sm font-bold uppercase tracking-widest text-white hover:text-brand-primary transition-colors'>
-              Trilhas <ChevronDown size={16} />
+              Mentorias <ChevronDown size={16} />
             </button>
             <div
               className={`absolute top-full left-0 w-64 pt-2 transition-all duration-300 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
             >
               <div className='bg-brand-dark border border-white/10 rounded-xl p-2 shadow-2xl'>
                 <Link
-                  to='/trilha-dominio-inep'
+                  to='/mentoria-pos-edital'
                   className='block px-4 py-3 text-xs font-bold uppercase tracking-tighter text-white hover:bg-brand-primary hover:text-brand-dark rounded-lg transition-colors'
                 >
-                  Domínio INEP – 1ª Fase
+                  Precettore Code Pos Edital
                 </Link>
-                <div className='px-4 py-3 text-[10px] font-bold text-brand-light/20 uppercase tracking-widest italic'>
-                  Em breve: 2ª Fase Prática
-                </div>
+                <Link
+                  to='/mentoria-pre-edital'
+                  className='block px-4 py-3 text-xs font-bold uppercase tracking-tighter text-white hover:bg-brand-primary hover:text-brand-dark rounded-lg transition-colors'
+                >
+                  Precettore Code Pre Edital
+                </Link>
               </div>
             </div>
           </div>

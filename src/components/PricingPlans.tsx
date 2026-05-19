@@ -7,34 +7,21 @@ import {
   Sparkles,
 } from 'lucide-react';
 
-const PricingPlans: React.FC = () => {
-  const plans = [
-    {
-      name: 'Mentoria Premium',
-      access: '12 meses de acesso',
-      mentorship: 'Individuais a cada 15 dias',
-      installments: '12x',
-      value: '800,00', // 9600 / 12
-      total: '9.600,00',
-      highlight: false,
-      features: ['Acompanhamento Individual', 'Material Exclusivo'],
-    },
-    {
-      name: 'Mentoria Exclusive',
-      access: '12 meses de acesso',
-      mentorship: 'Individuais semanais',
-      installments: '12x',
-      value: '1.250,00', // 15000 / 12
-      total: '15.000,00',
-      highlight: true,
-      features: [
-        'Mentoria Semanal',
-        'Uso de IA no treinamento',
-        'Suporte Prioritário',
-      ],
-    },
-  ];
+export type PlanType = {
+  name: string;
+  access: string;
+  mentorship: string;
+  installments: string;
+  value: string;
+  total: string;
+  highlight: boolean;
+};
 
+interface PricingPlansProps {
+  plans: PlanType[];
+}
+
+const PricingPlans: React.FC<PricingPlansProps> = ({ plans }) => {
   return (
     <section id='planos' className='py-24 bg-brand-dark overflow-hidden'>
       <div className='max-w-360 mx-auto px-6 md:px-12 lg:px-20'>
@@ -53,14 +40,14 @@ const PricingPlans: React.FC = () => {
           </p>
         </div>
 
-        {/* Grid de Planos */}
+        {/* Grid de Planos usando a prop 'plans' */}
         <div className='grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto'>
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative group p-[2px] rounded-sm transition-all duration-500 ${
+              className={`relative group p-0.5 rounded-sm transition-all duration-500 ${
                 plan.highlight
-                  ? 'bg-gradient-to-b from-[#C5A47E] to-transparent shadow-2xl shadow-[#C5A47E]/10'
+                  ? 'bg-linear-to-b from-[#C5A47E] to-transparent shadow-2xl shadow-[#C5A47E]/10'
                   : 'bg-white/10'
               }`}
             >
@@ -90,7 +77,6 @@ const PricingPlans: React.FC = () => {
                         INCLUSO: IA NO TREINAMENTO
                       </div>
                     ) : (
-                      /* Esta é a linha "fantasma" que empurra o conteúdo do card Premium */
                       <div
                         className='flex items-center gap-2 opacity-0'
                         aria-hidden='true'
