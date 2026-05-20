@@ -18,13 +18,34 @@ const TutorySection: React.FC = () => {
       icon: <RefreshCw className='text-cyan-400' size={28} />,
       title: 'Cronograma Adaptativo',
       description:
-        'A plataforma analisa seus erros continuamente. Se você falhar em Pediatria, seu cronograma se reorganiza automaticamente focando nas suas dificuldades reais.',
+        'A plataforma adapta o cronograma a sua rotina, estabelece metas diárias de estudo de acordo com sua rotina real e analisa seus erros continuamente, reorganizando seu cronograma automaticamente focando em suas dificuldades reais e com metas que consiga cumprir.',
     },
     {
       icon: <BrainCircuit className='text-purple-400' size={28} />,
-      title: 'Flashcards Inteligentes',
+      title: 'Revisões Espaçadas',
       description:
         'Baseado em neuroaprendizagem e repetição espaçada. O sistema identifica o que você está prestes a esquecer e programa a revisão no momento perfeito.',
+    },
+    {
+      //MUDAR ESTE E ENCAIXALO CORRETAMENTE NO GRID
+      icon: <BrainCircuit className='text-purple-400' size={28} />,
+      title: 'Feedback Semanal',
+      description:
+        'O aluno recebe de forma personalizada em seu WhatsApp seu desempenho semanal, com sua evolução e aquilo que precisa melhorar para atingir a aprovação.',
+    },
+    {
+      //MUDAR ESTE E ENCAIXALO CORRETAMENTE NO GRID
+      icon: <BrainCircuit className='text-purple-400' size={28} />,
+      title: 'Mentoria Estratégica Semanal',
+      description:
+        'O Mentor Precettore Code vai te ensinar como estudar, como revisar, quais pontos você deve focar, em qual ritmo deve estudar e como acompanhar sua evolução de acordo com seu cronograma e dados da plataforma Tutory.',
+    },
+    {
+      //MUDAR ESTE E ENCAIXALO CORRETAMENTE NO GRID
+      icon: <BrainCircuit className='text-purple-400' size={28} />,
+      title: 'Material Premium',
+      description:
+        'Não adianta estudar e buscar aprovação usando um material superficial, receba uma material completo feito por médicos especialistas e experientes em concursos.',
     },
   ];
 
@@ -48,9 +69,12 @@ const TutorySection: React.FC = () => {
         <div className='lg:col-span-7 bg-brand-primary/5 border border-brand-primary/10 rounded-2xl p-6 flex items-start gap-4'>
           <ShieldAlert className='text-brand-primary shrink-0 mt-1' size={20} />
           <p className='text-xs md:text-sm text-brand-light/80 font-medium leading-relaxed'>
-            A maioria dos médicos reprova no Revalida por falta de diagnóstico
-            dos próprios erros. Na Tutory, cada questão resolvida molda sua
-            estratégia do dia seguinte.
+            A maioria dos médicos são reprovados não por falta de esforço, mas
+            por um estudo desestruturado e um cronograma ineficiente. A Tutory
+            elimina essa desorganização através de um diagnóstico inteligente:
+            cada erro cometido molda automaticamente sua estratégia de amanhã,
+            garantindo que você estude exatamente o que precisa para ser
+            aprovado.
           </p>
         </div>
       </div>

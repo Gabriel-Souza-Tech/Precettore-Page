@@ -11,24 +11,55 @@ const FaqSection: React.FC = () => {
 
   const faqData: FaqItem[] = [
     {
-      question: 'O cronograma é igual para todos?',
+      question: 'Quais as formas de pagamento?',
       answer:
-        'Não. O seu cronograma é totalmente personalizado e adaptativo. A plataforma analisa seus erros e acertos continuamente para recalcular as suas prioridades de estudo com base nas suas dificuldades reais.',
+        'A Precettore Code é uma assinatura mensal com renovação recorrente no cartão de crédito. Dessa forma, só compromete o limite mês a mês.',
     },
     {
-      question: 'Preciso estudar muitas horas por dia?',
+      question: 'Além da mentoria tenho acesso aos cursos?',
       answer:
-        'Não necessariamente. A proposta do Precettore Code é aumentar a sua eficiência, não o seu volume de sofrimento. Focamos em direcionamento estratégico e inteligência de estudo para que você evolua mais em menos tempo.',
+        'Sim. Além da Mentoria, você ainda terá acesso a PDFs e videoaulas; Livro; Monitor de Performance; Sistema de Questões; Cursos Exclusivos; Fórum de Dúvidas;Resumos; Mapas Mentais; Marcação dos Aprovados.',
     },
     {
-      question: 'A IA substitui os mentores?',
+      question: 'Existe um prazo de garantia',
       answer:
-        'Não. A IA Aris potencializa o seu dia a dia, tirando dúvidas 24/7, explicando temas complexos e simulando condutas. Ela funciona como um acelerador de aprendizado que complementa a direção estratégica da mentoria.',
+        'Você possui 14 dias para testar a nossa plano. Caso não atenda às suas expectativas, devolveremos seu dinheiro sem complicações.',
     },
     {
-      question: 'As aulas ficam gravadas?',
+      question: 'Qual a periodicidade das reuniões?',
       answer:
-        'Sim. Todas as aulas estratégicas semanais ao vivo ficam gravadas e são hospedadas imediatamente na plataforma para você assistir no seu próprio ritmo, onde e quando quiser.',
+        'Na Precettore Code você terá reuniões individuais a cada 4 semanas e reuniões em grupo a cada 15 dias.',
+    },
+    {
+      question:
+        'Adquiri a Assinatura Precettore Code. E agora, como tenho acesso ao Mentor?',
+      answer:
+        'Assim que confirmar o pagamento da compra da sua Assinatura, você receberá um e-mail com o link de um formulário.Você será instruído a preencher o FDI (Formulário de Diagnóstico Inicial). O FDI vai solicitar informações sobre os seus estudos (objetivo, histórico, etc), sua rotina (quantas horas tem disponível por semana, se trabalha e estuda etc), além de minissimulados;',
+    },
+    {
+      question: 'Como o Mentor monta a minha cronograma?',
+      answer:
+        'Baseado em seu preenchimento do FDI e nas informações trocadas na primeira reunião individual, ele irá montar um planejamento de estudos individualizado com metas diárias. Que irá conciliar seu histórico, seus objetivos e sua carga horária disponível. Mesclando ações de estudo teórico, revisões e exercícios, conforme o avanço.',
+    },
+    {
+      question: 'Preenchi o FDI, em quanto tempo terei contato do Mentor?',
+      answer:
+        'Em 36hs do envio do formulário, o Mentor irá entrar em contato para agendar a primeira reunião individual.',
+    },
+    {
+      question: 'Por que contratar a Mentoria da Precettore Code?',
+      answer:
+        'A Mentoria da Precettore Code é acompanhamento individualizado feito por um médico especialista com histórico de aprovação diversos concursos (residências médicas, concursos públicos  e provas de tititulo de especialista) e está habilitado a ajudar outros alunos na organização dos estudos. O que ocorre tanto pela identificação de problemas e vulnerabilidades como também na ajuda na definição de “como” e “o quê” deve ser estudado para ter resultados mais rápidos. Aqui na Precettore Code, o Mentor para é um dos principais diferenciais da nossa Assinatura e que irá caminhar com você indicando o melhor caminho a seguir até sua aprovação.',
+    },
+    {
+      question: 'Qual a periodicidade das reuniões?',
+      answer:
+        'Na Precettore Code você terá reuniões individuais a cada 4 semanas e reuniões em grupo a cada 15 dias.',
+    },
+    {
+      question: 'Qual a periodicidade das reuniões?',
+      answer:
+        'Na Precettore Code você terá reuniões individuais a cada 4 semanas e reuniões em grupo a cada 15 dias.',
     },
   ];
 

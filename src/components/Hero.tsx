@@ -20,9 +20,10 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <p className='text-lg md:text-xl text-brand-light/80 mb-10 max-w-2xl mx-auto lg:mx-0'>
-              A Precettore Aprova oferece o suporte necessário para transformar
-              seu esforço em resultado real. Estude com quem entende de
-              aprovação.
+              Na Precettore Code, sua dedicação encontra a estratégia.
+              Transformamos seu volume de estudo em performance através da nossa
+              metodologia validada. Estude com inteligência e garanta sua
+              aprovação!
             </p>
             <div className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4'>
               <Link to='mentoria'>
@@ -53,10 +54,16 @@ const Hero: React.FC = () => {
               {/* Badge Flutuante de Autoridade */}
               <div className='absolute bottom-32 -left-12 bg-brand-dark/90 backdrop-blur-md border border-white/10 p-5 rounded-2xl hidden xl:block shadow-2xl'>
                 <p className='text-brand-primary font-black text-sm uppercase tracking-widest'>
-                  Dr. Responsável
+                  Dr. Carlos Augusto F. Correia
                 </p>
                 <p className='text-white/50 text-[10px] uppercase font-bold tracking-tighter'>
-                  Especialista em Aprovação Revalida
+                  Médico Especialista em Clínica Médica
+                </p>
+                <p className='text-white/50 text-[10px] uppercase font-bold tracking-tighter'>
+                  CRM/ES:10099 - RQE:12675
+                </p>
+                <p className='text-white/50 text-[10px] uppercase font-bold tracking-tighter'>
+                  Aprovado em residência e em vários concursos.
                 </p>
               </div>
             </div>

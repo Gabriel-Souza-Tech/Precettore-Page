@@ -3,13 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PricingPlans from '../components/PricingPlans';
 import TrustInfo from '../components/TrustInfo';
-import {
-  BookOpen,
-  Database,
-  MessagesSquare,
-  Calendar,
-  CheckCircle,
-} from 'lucide-react';
+import { BookOpen, Database, MessagesSquare } from 'lucide-react';
 
 const MentoriaPosEdital: React.FC = () => {
   useEffect(() => {
@@ -18,21 +12,23 @@ const MentoriaPosEdital: React.FC = () => {
 
   const posEditalPlans = [
     {
-      name: 'Mentoria Premium',
-      access: '6 meses de acesso',
-      mentorship: 'Individuais a cada 15 dias',
-      installments: '12x',
-      value: '249,75',
-      total: '2.997,00',
+      name: 'Precettore Code 2',
+      access: '2 meses de preparação intensiva',
+      mentorship: 'Individuais a cada mês',
+      artificialIntelligence: 'IA Aris no Período de 2 meses',
+      installments: '2x',
+      value: '199,00',
+      total: '398,00',
       highlight: false,
     },
     {
-      name: 'Mentoria Exclusive',
-      access: '6 meses de acesso',
-      mentorship: 'Individuais semanais',
-      installments: '12x',
-      value: '269,67',
-      total: '3.236,04',
+      name: 'Precettore Code 3',
+      access: '3 meses de preparação intensiva',
+      mentorship: 'Individuais a cada mês',
+      artificialIntelligence: 'IA Aris no Período de 3 meses',
+      installments: '3x',
+      value: '189,90',
+      total: '569,70',
       highlight: true,
     },
   ];
@@ -50,26 +46,18 @@ const MentoriaPosEdital: React.FC = () => {
                 Reta Final Intensiva
               </span>
               <h1 className='text-5xl md:text-7xl font-black text-white tracking-tighter mt-4 mb-8 uppercase'>
-                Mentoria Pós-Edital <br />
+                Mentoria Code <br />
                 <span className='text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-cyan-400'>
-                  Revalida INEP
+                  Pós-Edital
                 </span>
               </h1>
               <p className='text-lg md:text-xl text-brand-light/70 leading-relaxed max-w-3xl'>
-                Garanta um estudo de alto desempenho na reta final para o
-                Revalida INEP. Um ciclo intensivo de 2 a 3 meses focado na
-                engenharia reversa da banca, revisando os assuntos mais cobrados
-                através de metas diárias estratégicas.
+                Garante um estudo personalizado e um cronograma de alto
+                desempenho na reta final em que você estuda os temas mais
+                prevalentes na prova.
               </p>
 
-              <div className='mt-6 flex flex-wrap gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-brand-primary/80'>
-                <div className='flex items-center gap-2 bg-white/2 border border-white/5 px-4 py-2 rounded-full'>
-                  <Calendar size={14} /> Acesso por 6 meses
-                </div>
-                <div className='flex items-center gap-2 bg-white/2 border border-white/5 px-4 py-2 rounded-full'>
-                  <CheckCircle size={14} /> 30 Dias de Garantia
-                </div>
-              </div>
+              <div className='mt-6 flex flex-wrap gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-brand-primary/80'></div>
             </div>
           </div>
         </section>

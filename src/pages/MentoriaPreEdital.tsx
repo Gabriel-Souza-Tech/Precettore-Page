@@ -18,21 +18,23 @@ const MentoriaPosEdital: React.FC = () => {
 
   const preEditalPlans = [
     {
-      name: 'Mentoria Premium',
+      name: 'Precettore Code 6',
       access: '6 meses de acesso',
-      mentorship: 'Individuais a cada 15 dias',
-      installments: '12x',
-      value: '336,67',
-      total: '4.040,04',
+      mentorship: 'Inviduais a cada mês e em grupo a cada 15 dias',
+      artificialIntelligence: 'IA Aris no Período de 6 meses',
+      installments: '6x',
+      value: '259,90',
+      total: '1.559,400',
       highlight: false,
     },
     {
-      name: 'Mentoria Exclusive',
-      access: '6 meses de acesso',
-      mentorship: 'Individuais semanais',
+      name: 'Precettore Code 12',
+      access: '12 meses de acesso',
+      mentorship: 'Inviduais a cada mês e em grupo a cada 15 dias',
+      artificialIntelligence: 'IA Aris no Período de 12 meses',
       installments: '12x',
-      value: '386,67', // Valor provisório até decisão do chefe
-      total: '4.640,04',
+      value: '249,90',
+      total: '2.998,80',
       highlight: true,
     },
   ];
@@ -50,26 +52,22 @@ const MentoriaPosEdital: React.FC = () => {
                 Construção de Base Sólida
               </span>
               <h1 className='text-5xl md:text-7xl font-black text-white tracking-tighter mt-4 mb-8 uppercase'>
-                Mentoria Pre-Edital <br />
+                Mentoria Code
+                <br />
                 <span className='text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-cyan-400'>
-                  Revalida INEP
+                  Pre-Edital
                 </span>
               </h1>
               <p className='text-lg md:text-xl text-brand-light/70 leading-relaxed max-w-3xl'>
-                Desenvolva uma base teórica robusta e completa antes da abertura
-                do edital. Indicado para médicos graduados no exterior que
-                precisam organizar o cronograma com antecedência e consolidar o
-                conteúdo programático core do INEP sem pressa.
+                Desenvolva uma base teórica robusta e sólida antes da abertura
+                do edital. Indicada para médicos e estudantes de medicina que
+                desejam mais tempo em sua preparação, que precisam de organizar
+                seu cronograma de estudo com mais antecedência, personalização e
+                consolidar o conteúdo sem pressa. Aumentando de forma
+                exponencial as chances de aprovação na primeira tentativa.
               </p>
 
-              <div className='mt-6 flex flex-wrap gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-brand-primary/80'>
-                <div className='flex items-center gap-2 bg-white/[0.02] border border-white/5 px-4 py-2 rounded-full'>
-                  <Calendar size={14} /> Acesso por 6 meses Extensivo
-                </div>
-                <div className='flex items-center gap-2 bg-white/[0.02] border border-white/5 px-4 py-2 rounded-full'>
-                  <CheckCircle size={14} /> 30 Dias de Garantia
-                </div>
-              </div>
+              <div className='mt-6 flex flex-wrap gap-4 text-xs md:text-sm font-bold uppercase tracking-wider text-brand-primary/80'></div>
             </div>
           </div>
         </section>

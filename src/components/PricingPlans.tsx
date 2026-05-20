@@ -11,6 +11,7 @@ export type PlanType = {
   name: string;
   access: string;
   mentorship: string;
+  artificialIntelligence: string;
   installments: string;
   value: string;
   total: string;
@@ -71,20 +72,11 @@ const PricingPlans: React.FC<PricingPlansProps> = ({ plans }) => {
                       <Users size={16} />
                       MENTORIAS: {plan.mentorship}
                     </div>
-                    {plan.name === 'Mentoria Exclusive' ? (
-                      <div className='flex items-center gap-2 text-brand-primary'>
-                        <Sparkles size={16} />
-                        INCLUSO: IA NO TREINAMENTO
-                      </div>
-                    ) : (
-                      <div
-                        className='flex items-center gap-2 opacity-0'
-                        aria-hidden='true'
-                      >
-                        <Sparkles size={16} />
-                        ESPAÇADOR INVISÍVEL
-                      </div>
-                    )}
+
+                    <div className='flex items-center gap-2 text-brand-primary'>
+                      <Sparkles size={16} />
+                      INCLUSO: {plan.artificialIntelligence}
+                    </div>
                   </div>
                 </div>
 
